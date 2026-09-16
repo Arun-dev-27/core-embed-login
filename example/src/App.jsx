@@ -10,12 +10,12 @@ import './theme.css';
 // core-authentication - the SDK calls it directly (no backend in between) to create the transaction and
 // load the iframe. core-authentication answers the browser's CORS preflight for this one endpoint;
 // the actual origin-vs-client check still happens server-side, same as it always did.
-const CORE_BASE_URL = 'http://localhost:3001';
+const CORE_BASE_URL = import.meta.env.VITE_CORE_BASE_URL ?? 'http://localhost:3001';
 const CLIENT_ID = 'rms-web-dev';
 // core-authorization - the frontend posts the raw core_assertion here directly, and later re-checks
 // /session/me with the resulting cookie. Both calls use credentials: 'include' since the session is a
 // cross-origin httpOnly cookie, not a bearer token this code ever holds.
-const AUTHORIZATION_BASE_URL = 'http://localhost:3002';
+const AUTHORIZATION_BASE_URL = import.meta.env.VITE_AUTHORIZATION_BASE_URL ?? 'http://localhost:3002';
 
 function Hero() {
   return (

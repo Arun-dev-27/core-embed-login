@@ -5,7 +5,9 @@
   "description": "Minimal host app used to verify miqaat-core-embed-react against a locally running core-authentication + core-authorization.",
   "type": "module",
   "scripts": {
-    "dev": "vite"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "dependencies": {
     "miqaat-core-embed-react": "file:..",
